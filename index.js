@@ -5,7 +5,7 @@ const program = new Command();
 
 program.name("devkit").description("GitHub workflow automation CLI").version("0.1.0");
 
-// 테스트 명령어 (확인용)
+// command: 테스트
 program
   .command("hello")
   .description("테스트용 인사 명령어")
@@ -13,8 +13,11 @@ program
     console.log("👋 Hello from devkit CLI!");
   });
 
-// 저장소 생성 명령어
+// command: 저장소 생성
 program.command("repo").description("GitHub 저장소 생성").action(require("./commands/repo"));
+
+// command: 이슈 발행
+program.command("issue").description("GitHub 이슈 발행").action(require("./commands/issue"));
 
 // 커맨드 파싱
 program.parse(process.argv);
