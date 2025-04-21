@@ -8,7 +8,7 @@ program.name("devkit").description("GitHub workflow automation CLI").version("0.
 // command: 테스트
 program
   .command("hello")
-  .description("테스트용 인사 명령어")
+  .description("(테스트) hello")
   .action(() => {
     console.log("👋 Hello from devkit CLI!");
   });
@@ -18,6 +18,9 @@ program.command("repo").description("GitHub 저장소 생성").action(require(".
 
 // command: 이슈 발행
 program.command("issue").description("GitHub 이슈 발행").action(require("./commands/issue"));
+
+// command: 브랜치 생성
+program.command("branch").description("GitHub 브랜치 생성").action(require("./commands/branch"));
 
 // 커맨드 파싱
 program.parse(process.argv);
