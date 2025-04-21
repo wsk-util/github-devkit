@@ -1,0 +1,17 @@
+{
+  "name": "github-workflow-automation",
+  "version": "0.1.0",
+  "description": "Automation tool for GitHub workflows",
+  "main": "index.js",
+  "bin": {
+    "devkit": "index.js"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@octokit/rest": "^18.0.12",
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.2.4"
+  }
+}
