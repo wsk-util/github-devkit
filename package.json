@@ -1,10 +1,9 @@
 {
-  "name": "github-workflow-automation",
-  "version": "0.1.0",
-  "description": "Automation tool for GitHub workflows",
+  "name": "github-devkit",
+  "description": "Automation development kit for Github workflows",
   "main": "index.js",
   "bin": {
-    "devkit": "index.js"
+    "gdk": "index.js"
   },
   "scripts": {},
   "dependencies": {
