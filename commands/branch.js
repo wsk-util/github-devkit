@@ -1,9 +1,5 @@
 const inquirer = require("inquirer");
 const { execSync } = require("child_process");
-const octokit = require("../libs/github");
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 module.exports = async function createBranch() {
   const {

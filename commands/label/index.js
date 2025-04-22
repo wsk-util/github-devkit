@@ -2,14 +2,13 @@ const { resetLabels } = require("./reset");
 const { createLabels } = require("./create");
 const labels = require("../../data/labels.json");
 const inquirer = require("inquirer");
-const dotenv = require("dotenv");
-
-dotenv.config();
+const env = require("../../config/env");
 
 module.exports = async function label(cmd) {
+  await env.load();
   const { repo, selected } = await userPrompt();
 
-  const owner = process.env.GITHUB_OWNER;
+  const owner = env.GITHUB_OWNER;
   if (cmd.reset) {
     console.log(`🧹 기존 라벨 제거 중...`);
     await resetLabels(owner, repo);

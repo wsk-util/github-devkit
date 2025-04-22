@@ -2,9 +2,10 @@ const octokit = require("../../libs/github");
 
 module.exports = {
   async createLabels(owner, repo, selected) {
+    const github = await octokit.getInstance();
     for (const label of selected) {
       try {
-        await octokit.issues.createLabel({
+        await github.issues.createLabel({
           owner,
           repo,
           name: label.name,

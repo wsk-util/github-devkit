@@ -1,8 +1,5 @@
 const inquirer = require("inquirer");
 const octokit = require("../libs/github");
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 module.exports = async function createRepo() {
   const { name, description, isPrivate } = await inquirer.prompt([
@@ -26,7 +23,8 @@ module.exports = async function createRepo() {
   ]);
 
   // TODO: 계정 or 조직 선택
-  const response = await octokit.repos.createForAuthenticatedUser({
+  const github = await octokit.getInstance();
+  const response = await github.repos.createForAuthenticatedUser({
     name,
     description,
     private: isPrivate,
