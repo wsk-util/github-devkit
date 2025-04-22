@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Hotfix",
+    "color": "A12408",
+    "description": "치명적인 버그(긴급 수정 필요)",
+    "order": 1
+  },
+  {
+    "name": "Bug",
+    "color": "D41B1E",
+    "description": "치명적이지 않은 버그",
+    "order": 2
+  },
+  {
+    "name": "ASAP",
+    "color": "F6C604",
+    "description": "우선순위가 높은 작업",
+    "order": 3
+  },
+  {
+    "name": "Needs-Triage",
+    "color": "FAF089",
+    "description": "분류 대기중",
+    "order": 4
+  },
+
+  {
+    "name": "Status: In Progress",
+    "color": "A8D9FF",
+    "description": "작업 진행 중",
+    "order": 101
+  },
+  {
+    "name": "Status: Paused",
+    "color": "C79676",
+    "description": "작업이 일시 중단됨",
+    "order": 111
+  },
+  {
+    "name": "Status: Blocked",
+    "color": "F89B9B",
+    "description": "다른 작업/요인에 의해 막힘",
+    "order": 112
+  },
+  {
+    "name": "Status: Done",
+    "color": "9FE288",
+    "description": "작업 완료됨",
+    "order": 121
+  },
+  {
+    "name": "Status: Aborted",
+    "color": "BD7970",
+    "description": "작업 취소됨(더 이상 진행하지 않음)",
+    "order": 131
+  },
+
+  {
+    "name": "Type: Documentation",
+    "color": "ffffff",
+    "description": "문서 관련 작업",
+    "order": 201
+  },
+  {
+    "name": "Type: Feature",
+    "color": "bfdadc",
+    "description": "새로운 기능 추가",
+    "order": 211
+  },
+  {
+    "name": "Type: Enhancement",
+    "color": "b4d2eb",
+    "description": "기존 기능 개선",
+    "order": 212
+  },
+  {
+    "name": "Type: Refactor",
+    "color": "82C9F4",
+    "description": "코드 리팩터링",
+    "order": 213
+  },
+  {
+    "name": "Type: Fix",
+    "color": "DA4957",
+    "description": "버그 수정",
+    "order": 221
+  },
+  {
+    "name": "Type: Test",
+    "color": "78D658",
+    "description": "테스트 코드 작성/수정",
+    "order": 222
+  },
+  {
+    "name": "Type: Cleanup",
+    "color": "e8e8e8",
+    "description": "코드/디렉토리 정리(dead code 제거 등)",
+    "order": 231
+  },
+  {
+    "name": "Type: Chore",
+    "color": "cfd3d7",
+    "description": "빌드/패키지 관리 등 유지보수성 작업",
+    "order": 241
+  },
+
+  {
+    "name": "Scope: Project",
+    "color": "d4c5f9",
+    "description": "프로젝트 전반에 해당하는 작업",
+    "order": 301
+  },
+  {
+    "name": "Scope: Frontend",
+    "color": "383838",
+    "description": "프론트엔드 관련 작업",
+    "order": 311
+  },
+  {
+    "name": "Scope: Backend",
+    "color": "cecece",
+    "description": "백엔드 관련 작업",
+    "order": 321
+  },
+  {
+    "name": "Scope: Infra",
+    "color": "DABA53",
+    "description": "인프라 관련 작업 (배포, 서버 등)",
+    "order": 331
+  },
+  {
+    "name": "Scope: Github",
+    "color": "766573",
+    "description": "Github 관련 작업(Actions, Issue 등)",
+    "order": 341
+  }
+]
