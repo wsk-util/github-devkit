@@ -1,14 +1,15 @@
 const { resetLabels } = require("./reset");
 const { createLabels } = require("./create");
-const labels = require("../../data/labels.json");
-const inquirer = require("inquirer");
+const prompt = require("../../utils/prompt");
+const git = require("../../libs/git");
 const env = require("../../config/env");
 
 module.exports = async function label(cmd) {
   await env.load();
-  const { repo, selected } = await userPrompt();
+  const repo = git.currentRepo() || (await prompt.repo()).repo;
+  const selected = (await prompt.selectLabels()).selected;
 
-  const owner = env.GITHUB_OWNER;
+  const owner = env.GITHUB_USERNAME;
   if (cmd.reset) {
     console.log(`🧹 기존 라벨 제거 중...`);
     await resetLabels(owner, repo);
@@ -19,25 +20,3 @@ module.exports = async function label(cmd) {
   await createLabels(owner, repo, selected);
   console.log("🎉 라벨 생성 작업 완료");
 };
-
-async function userPrompt() {
-  return await inquirer.prompt([
-    {
-      type: "input",
-      name: "repo",
-      message: "저장소 이름:",
-      validate: (input) => input.trim() !== "" || "저장소 이름을 입력해주세요.",
-    },
-    {
-      type: "checkbox",
-      name: "selected",
-      message: "생성할 라벨을 선택하세요:",
-      choices: labels
-        .sort((a, b) => a.order - b.order)
-        .map((label) => ({
-          name: `${label.name} (${label.description})`,
-          value: label,
-        })),
-    },
-  ]);
-}

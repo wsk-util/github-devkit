@@ -3,7 +3,7 @@ const cmd = require("../utils/system/cmd");
 const git = {
   currentRepo: () => {
     try {
-      const url = cmd.exec("git remote get-url origin").trim();
+      const url = cmd.execWithResult("git remote get-url origin").trim();
       const repo = url
         .split("/")
         .pop()

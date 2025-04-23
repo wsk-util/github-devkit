@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const labels = require("../data/labels.json");
 
 const prompt = {
   username: async () => {
@@ -39,6 +40,21 @@ const prompt = {
         name: "repo",
         message: "저장소 이름:",
         validate: (input) => input.trim() !== "" || "저장소 이름을 입력해주세요.",
+      },
+    ]);
+  },
+  selectLabels: async () => {
+    return await inquirer.prompt([
+      {
+        type: "checkbox",
+        name: "selected",
+        message: "생성할 라벨을 선택하세요:",
+        choices: labels
+          .sort((a, b) => a.order - b.order)
+          .map((label) => ({
+            name: `${label.name} (${label.description})`,
+            value: label,
+          })),
       },
     ]);
   },
