@@ -1,4 +1,4 @@
-const octokit = require("../../libs/github");
+const octokit = require("../../libs/octokit");
 
 module.exports = {
   async createLabels(owner, repo, selected) {

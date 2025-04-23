@@ -1,6 +1,6 @@
-const { readFile, writeFile } = require("../utils/fs");
-const { resolveAbsPath } = require("../utils/path");
-const prompt = require("../commands/prompt");
+const { readFile, writeFile } = require("../utils/system/fs");
+const { resolveAbsPath } = require("../utils/system/path");
+const prompt = require("../utils/prompt");
 
 const ENV_PATH = resolveAbsPath("./config/env.json");
 
