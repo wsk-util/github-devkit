@@ -54,6 +54,7 @@ const prompt = {
           .map((label) => ({
             name: `${label.name} (${label.description})`,
             value: label,
+            checked: label.default === true,
           })),
       },
     ]);
