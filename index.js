@@ -33,4 +33,12 @@ program
   .option("-c, --create", "(옵션) 새로운 브랜치 생성")
   .action(require("./commands/branch"));
 
+// command: 설정 관리
+program
+  .command("config")
+  .description("GitHub DevKit 설정 관리")
+  .option("-t, --token", "(옵션) GitHub 토큰 설정")
+  .option("-s, --show", "(옵션) 현재 설정 보기")
+  .action(require("./commands/config"));
+
 program.parse(process.argv);
