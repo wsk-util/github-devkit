@@ -10,28 +10,21 @@
     "name": "Hotfix :fire:",
     "color": "C0392B",
     "description": "치명적인 버그(긴급 수정 필요)",
-    "order": 2,
+    "order": 11,
     "default": true
   },
   {
     "name": "Bug :bug:",
     "color": "E57373",
     "description": "치명적이지 않은 버그",
-    "order": 3,
+    "order": 12,
     "default": true
   },
   {
     "name": "ASAP :rotating_light:",
     "color": "F4D03F",
     "description": "우선순위가 높은 작업",
-    "order": 4,
-    "default": true
-  },
-  {
-    "name": "Documentation :memo:",
-    "color": "F0F0F0",
-    "description": "문서 관련 작업",
-    "order": 5,
+    "order": 13,
     "default": true
   },
 
@@ -44,7 +37,7 @@
   },
   {
     "name": "Status: Paused :pause_button:",
-    "color": "D8B185",
+    "color": "C1C1C1",
     "description": "작업이 일시 중단됨",
     "order": 111,
     "default": true
@@ -70,60 +63,60 @@
     "order": 131,
     "default": true
   },
-
+  
+  {
+    "name": "Type: Documentation :memo:",
+    "color": "E3E3E3",
+    "description": "문서 관련 작업",
+    "order": 201,
+    "default": true
+  },
   {
     "name": "Type: UI/UX :art:",
     "color": "B4E49A",
     "description": "UI/UX 관련 작업",
-    "order": 201,
+    "order": 211,
     "default": true
   },
   {
     "name": "Type: Feature :sparkles:",
     "color": "B7D4EC",
     "description": "새로운 기능 추가",
-    "order": 202,
+    "order": 212,
     "default": true
   },
   {
     "name": "Type: Enhancement :zap:",
-    "color": "DCE7F4",
+    "color": "CDDCEF",
     "description": "기존 기능 개선",
-    "order": 203,
+    "order": 213,
     "default": true
   },
   {
     "name": "Type: Refactor :recycle:",
     "color": "93D0F5",
     "description": "코드 리팩터링",
-    "order": 211,
+    "order": 221,
     "default": true
   },
   {
     "name": "Type: Fix :bug:",
     "color": "E68A92",
     "description": "버그 수정",
-    "order": 212,
+    "order": 222,
     "default": true
   },
   {
     "name": "Type: Test :test_tube:",
     "color": "D6A7DE",
     "description": "테스트 코드 작성/수정",
-    "order": 213,
+    "order": 223,
     "default": true
   },
   {
     "name": "Type: Chore :package:",
-    "color": "D6DCE1",
+    "color": "D9B387",
     "description": "유지보수성 작업(패키지 관리, 빌드/CI 설정 등)",
-    "order": 221,
-    "default": true
-  },
-  {
-    "name": "Type: Cleanup :broom:",
-    "color": "E3E3E3",
-    "description": "코드/디렉토리 정리(dead code 제거, import 정리 등)",
     "order": 231,
     "default": true
   },
@@ -136,21 +129,14 @@
   },
 
   {
-    "name": "Scope: Project",
-    "color": "C8B8EC",
-    "description": "프로젝트 전반에 해당하는 작업",
-    "order": 301,
-    "default": true
-  },
-  {
-    "name": "Scope: Frontend",
+    "name": "Scope: FE",
     "color": "4A4A4A",
     "description": "프론트엔드 관련 작업",
     "order": 311,
     "default": true
   },
   {
-    "name": "Scope: Backend",
+    "name": "Scope: BE",
     "color": "C0C0C0",
     "description": "백엔드 관련 작업",
     "order": 321,
