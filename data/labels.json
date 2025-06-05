@@ -1,0 +1,159 @@
+[
+  {
+    "name": "Needs-Triage :mag:",
+    "color": "F9E5A4",
+    "description": "분류 대기중",
+    "order": 1,
+    "default": true
+  },
+  {
+    "name": "Hotfix :fire:",
+    "color": "C0392B",
+    "description": "치명적인 버그(긴급 수정 필요)",
+    "order": 11,
+    "default": true
+  },
+  {
+    "name": "Bug :bug:",
+    "color": "E57373",
+    "description": "치명적이지 않은 버그",
+    "order": 12,
+    "default": true
+  },
+  {
+    "name": "ASAP :rotating_light:",
+    "color": "F4D03F",
+    "description": "우선순위가 높은 작업",
+    "order": 13,
+    "default": true
+  },
+
+  {
+    "name": "Status: In Progress :hourglass_flowing_sand:",
+    "color": "91C9F7",
+    "description": "작업 진행 중",
+    "order": 101,
+    "default": true
+  },
+  {
+    "name": "Status: Paused :pause_button:",
+    "color": "C1C1C1",
+    "description": "작업이 일시 중단됨",
+    "order": 111,
+    "default": true
+  },
+  {
+    "name": "Status: Blocked :no_entry:",
+    "color": "F08A8A",
+    "description": "다른 작업/요인에 의해 막힘",
+    "order": 112,
+    "default": true
+  },
+  {
+    "name": "Status: Done :white_check_mark:",
+    "color": "89D07B",
+    "description": "작업 완료됨",
+    "order": 121,
+    "default": true
+  },
+  {
+    "name": "Status: Aborted :x:",
+    "color": "C87972",
+    "description": "작업 취소됨(더 이상 진행하지 않음)",
+    "order": 131,
+    "default": true
+  },
+  
+  {
+    "name": "Type: Documentation :memo:",
+    "color": "E3E3E3",
+    "description": "문서 관련 작업",
+    "order": 201,
+    "default": true
+  },
+  {
+    "name": "Type: UI/UX :art:",
+    "color": "B4E49A",
+    "description": "UI/UX 관련 작업",
+    "order": 211,
+    "default": true
+  },
+  {
+    "name": "Type: Feature :sparkles:",
+    "color": "B7D4EC",
+    "description": "새로운 기능 추가",
+    "order": 212,
+    "default": true
+  },
+  {
+    "name": "Type: Enhancement :zap:",
+    "color": "CDDCEF",
+    "description": "기존 기능 개선",
+    "order": 213,
+    "default": true
+  },
+  {
+    "name": "Type: Refactor :recycle:",
+    "color": "93D0F5",
+    "description": "코드 리팩터링",
+    "order": 221,
+    "default": true
+  },
+  {
+    "name": "Type: Fix :bug:",
+    "color": "E68A92",
+    "description": "버그 수정",
+    "order": 222,
+    "default": true
+  },
+  {
+    "name": "Type: Test :test_tube:",
+    "color": "D6A7DE",
+    "description": "테스트 코드 작성/수정",
+    "order": 223,
+    "default": true
+  },
+  {
+    "name": "Type: Chore :package:",
+    "color": "D9B387",
+    "description": "유지보수성 작업(패키지 관리, 빌드/CI 설정 등)",
+    "order": 231,
+    "default": true
+  },
+  {
+    "name": "Type: Deploy :rocket:",
+    "color": "BFDACD",
+    "description": "배포 관련 작업(스크립트 작성, 배포 환경 설정 등)",
+    "order": 241,
+    "default": true
+  },
+
+  {
+    "name": "Scope: FE",
+    "color": "4A4A4A",
+    "description": "프론트엔드 관련 작업",
+    "order": 311,
+    "default": true
+  },
+  {
+    "name": "Scope: BE",
+    "color": "C0C0C0",
+    "description": "백엔드 관련 작업",
+    "order": 321,
+    "default": true
+  },
+  {
+    "name": "Scope: Infra",
+    "color": "D7B75B",
+    "description": "인프라 관련 작업 (배포, 서버 등)",
+    "order": 331,
+    "default": true
+  },
+  {
+    "name": "Scope: Github",
+    "color": "7E6F7B",
+    "description": "Github 관련 작업(Actions, Issue 등)",
+    "order": 341,
+    "default": true
+  }
+]
