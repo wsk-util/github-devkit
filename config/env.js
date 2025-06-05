@@ -2,12 +2,14 @@ const { readFile, writeFile } = require("../utils/system/fs");
 const { resolveAbsPath } = require("../utils/system/path");
 const prompt = require("../utils/prompt");
 const git = require("../libs/git");
+const fs = require("fs");
 
 const ENV_PATH = resolveAbsPath("./config/env.json");
 
 const env = {
   GITHUB_TOKEN: "",
   GITHUB_USERNAME: "",
+  DEFAULT_CLONE_PATH: "",
   _loaded: false,
 
   async load(requireToken = true) {
@@ -16,11 +18,18 @@ const env = {
     this._loaded = true;
     
     try {
-      const loaded = JSON.parse(readFile(ENV_PATH));
+      let loaded = {};
+      
+      if (fs.existsSync(ENV_PATH)) {
+        loaded = JSON.parse(readFile(ENV_PATH));
+      }
+      
       this.GITHUB_TOKEN = loaded.GITHUB_TOKEN || "";
+      this.DEFAULT_CLONE_PATH = loaded.DEFAULT_CLONE_PATH || process.cwd();
     } catch (error) {
-      // 파일이 없으면 기본값 사용
+      // 파일 파싱 오류 시 기본값 사용
       this.GITHUB_TOKEN = "";
+      this.DEFAULT_CLONE_PATH = process.cwd();
     }
 
     if (!this.GITHUB_TOKEN && requireToken) {
@@ -40,6 +49,8 @@ const env = {
       }
     }
 
+    // 설정이 변경되었으면 저장 (최초 로딩 시에도 기본값 저장)
+    this.save();
     return this;
   },
 
@@ -48,14 +59,13 @@ const env = {
   },
 
   save() {
-    const json = JSON.stringify(
-      {
-        GITHUB_TOKEN: this.GITHUB_TOKEN,
-      },
-      null,
-      2
-    );
-    writeFile(ENV_PATH, json);
+    const config = {
+      GITHUB_TOKEN: this.GITHUB_TOKEN,
+      DEFAULT_CLONE_PATH: this.DEFAULT_CLONE_PATH,
+    };
+
+    const jsonContent = JSON.stringify(config, null, 2);
+    writeFile(ENV_PATH, jsonContent);
   },
 };
 

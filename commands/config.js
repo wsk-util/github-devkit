@@ -7,6 +7,8 @@ async function configCommand(options) {
   await env.load(false);
   if (options.token) {
     await setGitHubToken();
+  } else if (options.path) {
+    await setClonePath();
   } else if (options.show) {
     showCurrentConfig();
   } else {
@@ -44,11 +46,36 @@ async function setGitHubToken() {
   }
 }
 
+async function setClonePath() {
+  console.log("저장소 클론 기본 경로를 설정합니다.");
+  console.log(`현재 설정: ${env.DEFAULT_CLONE_PATH}`);
+  
+  const inquirer = require("inquirer");
+  const { clonePath } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "clonePath",
+      message: "새로운 클론 경로를 입력하세요:",
+      default: env.DEFAULT_CLONE_PATH,
+      validate: (input) => {
+        if (!input.trim()) return "경로를 입력해주세요.";
+        return true;
+      }
+    }
+  ]);
+
+  env.DEFAULT_CLONE_PATH = clonePath.trim();
+  env.save();
+  console.log(`✅ 클론 기본 경로가 설정되었습니다: ${env.DEFAULT_CLONE_PATH}`);
+}
+
 function showCurrentConfig() {
   const git = require("../libs/git");
+  
   console.log("현재 설정:");
   console.log(`GitHub 토큰: ${env.GITHUB_TOKEN ? "설정됨" : "설정되지 않음"}`);
   console.log(`Git remote owner: ${git.currentOwner() || "Git 저장소가 아니거나 GitHub remote가 없음"}`);
+  console.log(`클론 기본 경로: ${env.DEFAULT_CLONE_PATH}`);
 }
 
 async function interactiveConfig() {
@@ -62,6 +89,7 @@ async function interactiveConfig() {
       message: "설정할 항목을 선택하세요:",
       choices: [
         { name: "GitHub 토큰 설정", value: "token" },
+        { name: "클론 기본 경로 설정", value: "path" },
         { name: "현재 설정 보기", value: "show" },
         { name: "토큰 재설정", value: "reset" }
       ]
@@ -71,6 +99,9 @@ async function interactiveConfig() {
   switch (configType) {
     case "token":
       await setGitHubToken();
+      break;
+    case "path":
+      await setClonePath();
       break;
     case "show":
       showCurrentConfig();
