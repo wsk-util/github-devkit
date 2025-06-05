@@ -1,3 +1,6 @@
+const git = require("../libs/git");
+const prompt = require("../utils/prompt");
+
 module.exports = async function branch(cmd) {
   if (cmd.create) {
     const { issueNumber, prefix, branchName, baseBranch } = await prompt.createBranch();
